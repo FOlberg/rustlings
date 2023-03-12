@@ -4,8 +4,6 @@
 // Don't change any line other than the marked one.
 // Execute `rustlings hint traits5` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub trait SomeTrait {
     fn some_function(&self) -> bool {
         true
@@ -27,9 +25,15 @@ impl SomeTrait for OtherStruct {}
 impl OtherTrait for OtherStruct {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
-fn some_func(item: ??) -> bool {
+fn some_func(item: impl SomeTrait + OtherTrait) -> bool {
     item.some_function() && item.other_function()
 }
+
+// Or the de-sugared syntax form:
+// fn some_func<InheritedTyp: SomeTrait + OtherTrait>(item: InheritedTyp) -> bool {
+//     item.some_function() && item.other_function()
+// }
+
 
 fn main() {
     some_func(SomeStruct {});
