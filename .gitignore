@@ -1,13 +1,23 @@
-*.swp
+# Cargo
 target/
-**/*.rs.bk
+Cargo.lock
+!/Cargo.lock
+
+# State file
+.rustlings-state.txt
+
+# oranda
+public/
+.netlify
+
+# OS
 .DS_Store
-*.pdb
-exercises/clippy/Cargo.toml
-exercises/clippy/Cargo.lock
-rust-project.json
+.direnv/
+
+# Editor
+*.swp
 .idea
-.vscode/*
-!.vscode/extensions.json
 *.iml
-*.o
+
+# Ignore file for editors like Helix
+.ignore
